@@ -11,13 +11,13 @@ Questa funzione potrebbe essere utile:
 
 ## Funzionamento
 
-Rif.: http://www.wpexpertdeveloper.com/wordpress-private-user-page-member-portal/.
+Nella pagina di configurazione del plugin [spid-wordpress](https://github.com/simevo/spid-wordpress) occorre ticcare l'attributo **Codice fiscale** (`fiscalNumber`). In questo modo quando un utente fa il login con SPID il plugin aggiunge l'attributo SPID **codice fiscale** nel database di Wordpress, nella tabella wp_usermeta, col nome `spid_fiscalNumber`.
+
+Per l'attiavazione delle pagine / articoli privati vedi: http://www.wpexpertdeveloper.com/wordpress-private-user-page-member-portal/.
 
 ### Senza plugin aggiuntivi
 
 Si usa la soluzione 1 ("Using default WordPress pages for Private User Page") di http://www.wpexpertdeveloper.com/wordpress-private-user-page-member-portal/ aggiungendo alla pagina / all'articolo il campo custom `private_page_spid_fiscalNumber`. 
-
-Nella pagina di configurazione del plugin [spid-wordpress](https://github.com/simevo/spid-wordpress) occorre ticcare l'attributo **Codice fiscale** (`fiscalNumber`). In questo modo quando un utente fa il login con SPID il plugin aggiunge l'attributo SPID **codice fiscale** nel database di Wordpress, nella tabella wp_usermeta, col nome `spid_fiscalNumber`.
 
 Il codice da aggiungere al file `functions.php` deve essere modificato, facendo sì che la funzione `wcp_validate_private_page_restrictions` metta a confronto il campo custom della pagina / articolo `private_page_spid_fiscalNumber` col campo meta dell'utente `spid_fiscalNumber`.
 
